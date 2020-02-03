@@ -2,7 +2,7 @@
 
 <img align="left" src="ExtractFB.jpg"/>
 
-The Extract DB structure, Firebird+FireDAC project represents a code example for the [Extract DB structure, Firebird+FireDAC](https://www.clevercomponents.com/portal/kb/a136/sftp-client-with-user-and-public-key-authorization.aspx) tutorial.   
+The Extract DB structure, Firebird+FireDAC project represents a code example for the [Extract DB structure, Firebird+FireDAC](https://www.clevercomponents.com/portal/kb/a146/extract-db-structure-firebirdfiredac.aspx) tutorial.   
 
 This example shows how to extract a FireBird database structure via the FireDAC library.
 
