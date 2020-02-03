@@ -1,5 +1,7 @@
 # Database-Comparer-Tutorials
 
+<img align="left" src="https://www.clevercomponents.com/images/DbcTutorials.jpg"/>
+
 Now, more than ten years on the market, the Dabase Comparer got lots of feedback and usage experience. Our customers asked us about code examples, demos and "How To" code snippets.   
 To summarize the experience, we decided to publish the most commonly asked examples and code snippets in our [Knowledge Base](https://www.clevercomponents.com/portal/KB/c1/all-articles.aspx)
 
