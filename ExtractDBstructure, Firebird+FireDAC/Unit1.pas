@@ -77,7 +77,7 @@ end;
 procedure TForm1.AddLogMessage(Sender: TObject; ErrText: string);
 begin
   memLog.Lines.Add(ErrText);
-  memResult.Perform(EM_SCROLLCARET, 0, 0);
+  memLog.Perform(EM_SCROLLCARET, 0, 0);
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
