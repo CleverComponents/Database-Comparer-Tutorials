@@ -6,5 +6,5 @@ The Extract DB structure, Firebird+FireDAC project represents a code example for
 
 This example shows how to extract a FireBird database structure via the FireDAC library.
 
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository represents a list of examples, code snippets and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/) article. This list will be periodically updated, new projects will be added.   
-Please stay tuned to new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+The [GitHub/CleverComponents/Database-Comparer-Tutorials](https://github.com/CleverComponents/Database-Comparer-Tutorials) repository represents a list of examples, code snippets and demo projects for the [Database-Comparer-Tutorials](https://www.clevercomponents.com/portal/kb/c12/tutorials.aspx) article. This list will be periodically updated, new projects will be added.   
+Please stay tuned to new examples and use cases of the [Database Comparer](https://www.clevercomponents.com/products/dbc.asp) library.
