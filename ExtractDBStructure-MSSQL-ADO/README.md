@@ -2,7 +2,7 @@
 
 <img align="left" src="MSSQLExtract.jpg"/>
 
-The Extract DB structure, MS SQL+ADO project represents a code example for the [Extract DB structure, MS SQL+ADO](https://www.clevercomponents.com/portal/kb/a146/extract-db-structure-firebirdfiredac.aspx) tutorial.   
+The Extract DB structure, MS SQL+ADO project represents a code example for the [Extract DB structure, MS SQL+ADO](https://www.clevercomponents.com/portal/kb/a147/extract-db-structure-ms-sqlado.aspx) tutorial.   
 
 This example shows how to extract a MS SQL database structure via the ADO component.
 
