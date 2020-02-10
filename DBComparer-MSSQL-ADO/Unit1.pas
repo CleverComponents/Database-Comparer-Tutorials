@@ -161,11 +161,6 @@ end;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
-  edtMasterServer.Text := 'DESKTOP-JL2AT1U\SQLEXPRESS';
-  edtTargetServer.Text := 'DESKTOP-JL2AT1U\SQLEXPRESS';
-  edtMasterDatabaseName.Text := 'CleverTest';
-  edtTargetDatabaseName.Text := 'School 3';
-
   cbSqlServerVersion.Items.Clear();
 
   cbSqlServerVersion.Items.AddObject('MSSQL 2000', TObject(st_MSSQL2000));
