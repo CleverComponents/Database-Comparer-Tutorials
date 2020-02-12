@@ -2,7 +2,7 @@
 
 <img align="left" src="Comparer.jpg"/>
 
-The Synchronize Firebird DB structures via FireDAC project represents a code example for the [Synchronize Firebird DB structures via FireDAC](https://www.clevercomponents.com/portal/kb/a146/extract-db-structure-firebirdfiredac.aspx) tutorial.   
+The Synchronize Firebird DB structures via FireDAC project represents a code example for the [Synchronize Firebird DB structures via FireDAC](https://www.clevercomponents.com/portal/kb/a148/synchronize-firebird-db-structures-via-firedac.aspx) tutorial.   
 
 This example shows how to synchronize a FireBird database structure via the FireDAC library.
 
