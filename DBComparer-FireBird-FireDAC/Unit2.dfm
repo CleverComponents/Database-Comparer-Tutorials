@@ -33,7 +33,7 @@ object Form2: TForm2
     Left = 8
     Top = 108
     Width = 63
-    Height = 16
+    Height = 13
     Caption = 'Client Library'
   end
   object Label4: TLabel
@@ -182,6 +182,7 @@ object Form2: TForm2
     Height = 82
     Lines.Strings = (
       '<Log>')
+    ReadOnly = True
     ScrollBars = ssBoth
     TabOrder = 11
   end
@@ -192,12 +193,13 @@ object Form2: TForm2
     Height = 181
     Lines.Strings = (
       '<Result Script>')
+    ReadOnly = True
     ScrollBars = ssBoth
     TabOrder = 12
   end
   object DBCConnection1: TDBCConnectionFireDAC
     Database = FDConnection1
-    OnBeforeConnect = DBCConnection2BeforeConnect
+    OnBeforeConnect = DBCConnection1BeforeConnect
     OnErrorMessage = AddLogMessage
     Left = 224
     Top = 304

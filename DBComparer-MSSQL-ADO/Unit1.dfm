@@ -37,7 +37,7 @@ object Form2: TForm2
   end
   object Label1: TLabel
     Left = 7
-    Top = 135
+    Top = 158
     Width = 92
     Height = 13
     Caption = 'SQL Server Version'
@@ -123,7 +123,7 @@ object Form2: TForm2
     OnClick = btnExtractClick
   end
   object memLog: TMemo
-    Left = 8
+    Left = 9
     Top = 215
     Width = 577
     Height = 89
@@ -146,7 +146,7 @@ object Form2: TForm2
   end
   object cbSqlServerVersion: TComboBox
     Left = 105
-    Top = 132
+    Top = 155
     Width = 121
     Height = 21
     Style = csDropDownList
@@ -154,10 +154,12 @@ object Form2: TForm2
   end
   object cbAuthM: TCheckBox
     Left = 8
-    Top = 159
+    Top = 132
     Width = 141
     Height = 17
     Caption = 'Windows authentication'
+    Checked = True
+    State = cbChecked
     TabOrder = 7
   end
   object edtMasterServer: TEdit
@@ -205,6 +207,25 @@ object Form2: TForm2
     TabOrder = 13
     OnClick = btnCompareClick
   end
+  object btnUpdate: TButton
+    Left = 262
+    Top = 182
+    Width = 121
+    Height = 27
+    Caption = 'Update database'
+    TabOrder = 14
+    OnClick = btnUpdateClick
+  end
+  object cbAuthT: TCheckBox
+    Left = 296
+    Top = 132
+    Width = 141
+    Height = 17
+    Caption = 'Windows authentication'
+    Checked = True
+    State = cbChecked
+    TabOrder = 15
+  end
   object ADOConnection1: TADOConnection
     Left = 24
     Top = 336
@@ -231,7 +252,7 @@ object Form2: TForm2
   end
   object DBCConnectionADO2: TDBCConnectionADO
     Connection = ADOConnection2
-    OnBeforeConnect = DBCConnectionADO1BeforeConnect
+    OnBeforeConnect = DBCConnectionADO2BeforeConnect
     OnErrorMessage = AddErrorMessage
     OnLogNextLine = AddErrorMessage
     Left = 392

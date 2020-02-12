@@ -55,6 +55,7 @@ type
     procedure DBCConnection2BeforeConnect(Sender: TObject);
     procedure AddLogMessage(Sender: TObject; ErrText: string);
     procedure FormCreate(Sender: TObject);
+    procedure DBCConnection1BeforeConnect(Sender: TObject);
   private
     { Private declarations }
   public
@@ -95,10 +96,13 @@ begin
   try
     DBStructure1.Clear();
     DBStructure2.Clear();
+    memLog.Lines.Add('Open ' + edtMasterDbName.Text + ' DataBase');
     IBDBExtract1.ExtractDatabase();
+    memLog.Lines.Add('Open ' + edtTargetDbName.Text + ' DataBase');
     IBDBExtract2.ExtractDatabase();
     DBStructure1.Metadata.ExtractMetadata(memResult.Lines);
     DBStructure2.Metadata.ExtractMetadata(memResult.Lines);
+    memLog.Lines.Add('<Extract Finished>');
   finally
     DBCConnection1.Connected := False;
     DBCConnection2.Connected := False;
@@ -110,7 +114,7 @@ begin
   IBSQLExec.ExecuteScript();
 end;
 
-procedure TForm2.DBCConnection2BeforeConnect(Sender: TObject);
+procedure TForm2.DBCConnection1BeforeConnect(Sender: TObject);
 begin
   FDPhysFBDriverLink1.VendorLib := edtClientLibrary.Text;
 
@@ -120,13 +124,21 @@ begin
   FDConnection1.Params.Add('User_Name=' + edtMasterUser.Text);
   FDConnection1.Params.Add('Password=' + edtMasterPassword.Text);
 
+  DBStructure1.IBServerOptions.SQLServerVersion :=
+    TIBSQLServerVersionType(cbSqlServerVersion.Items.Objects[cbSqlServerVersion.ItemIndex]);
+end;
+
+procedure TForm2.DBCConnection2BeforeConnect(Sender: TObject);
+begin
+  FDPhysFBDriverLink1.VendorLib := edtClientLibrary.Text;
+
   FDConnection2.Params.Clear();
   FDConnection2.DriverName := 'FB';
   FDConnection2.Params.Add('Database=' + edtTargetDbName.Text);
   FDConnection2.Params.Add('User_Name=' + edtTargetUser.Text);
   FDConnection2.Params.Add('Password=' + edtTargetPassword.Text);
 
-  DBStructure1.IBServerOptions.SQLServerVersion :=
+  DBStructure2.IBServerOptions.SQLServerVersion :=
     TIBSQLServerVersionType(cbSqlServerVersion.Items.Objects[cbSqlServerVersion.ItemIndex]);
 end;
 

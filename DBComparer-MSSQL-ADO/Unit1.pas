@@ -48,11 +48,15 @@ type
     MSSQLDBExtract2: TMSSQLDBExtract;
     MSSQLExec1: TMSSQLExec;
     DBComparer1: TDBComparer;
+    btnUpdate: TButton;
+    cbAuthT: TCheckBox;
     procedure DBCConnectionADO1BeforeConnect(Sender: TObject);
     procedure AddErrorMessage(Sender: TObject; ErrText: string);
     procedure FormCreate(Sender: TObject);
     procedure btnExtractClick(Sender: TObject);
     procedure btnCompareClick(Sender: TObject);
+    procedure btnUpdateClick(Sender: TObject);
+    procedure DBCConnectionADO2BeforeConnect(Sender: TObject);
   private
     { Private declarations }
   public
@@ -96,28 +100,10 @@ end;
 
 procedure TForm2.ExtractMasterDatabase;
 begin
-  DBCConnectionADO1.Connected := True;
-  try
-    DBStructure1.Clear();
-    memLog.Lines.Add('Open ' + edtMasterDatabaseName.Text + ' DataBase');
-    MSSQLDBExtract1.ExtractDatabase();
-    DBStructure1.Metadata.ExtractMetadata(memResult.Lines);
-  finally
-    DBCConnectionADO1.Connected := False;
-  end;
 end;
 
 procedure TForm2.ExtractTargetDatabase;
 begin
-  DBCConnectionADO2.Connected := True;
-  try
-    DBStructure2.Clear();
-    memLog.Lines.Add('Open ' + edtTargetDatabaseName.Text + ' DataBase');
-    MSSQLDBExtract2.ExtractDatabase();
-    DBStructure2.Metadata.ExtractMetadata(memResult.Lines);
-  finally
-    DBCConnectionADO2.Connected := False;
-  end;
 end;
 
 procedure TForm2.btnCompareClick(Sender: TObject);
@@ -140,9 +126,29 @@ begin
   DBStructure1.Objs.MSSQLServerOptions.Assign(DBComparer1.MSSQLServerOptions);
   DBStructure2.Objs.MSSQLServerOptions.Assign(DBComparer1.MSSQLServerOptions);
 
-  ExtractMasterDatabase();
-  ExtractTargetDatabase();
+  DBCConnectionADO1.Connected := True;
+  DBCConnectionADO2.Connected := True;
+  try
+    DBStructure1.Clear();
+    memLog.Lines.Add('Open ' + edtMasterDatabaseName.Text + ' DataBase');
+    MSSQLDBExtract1.ExtractDatabase();
+    DBStructure1.Metadata.ExtractMetadata(memResult.Lines);
+
+    DBStructure2.Clear();
+    memLog.Lines.Add('Open ' + edtTargetDatabaseName.Text + ' DataBase');
+    MSSQLDBExtract2.ExtractDatabase();
+    DBStructure2.Metadata.ExtractMetadata(memResult.Lines);
+  finally
+    DBCConnectionADO2.Connected := False;
+    DBCConnectionADO1.Connected := False;
+  end;
+
   memLog.Lines.Add('<Extract Finished.>')
+end;
+
+procedure TForm2.btnUpdateClick(Sender: TObject);
+begin
+  MSSQLExec1.ExecuteScript();
 end;
 
 procedure TForm2.DBCConnectionADO1BeforeConnect(Sender: TObject);
@@ -151,11 +157,17 @@ begin
     AdoConnectString(cbAuthM.Checked, edtMasterServer.Text, edtMasterDatabaseName.Text,
     edtMasterUser.Text, edtMasterPassword.Text);
 
+  DBStructure1.Objs.MSSQLServerOptions.SQLServerVersion :=
+    TMSSQLServerVersionType(cbSqlServerVersion.Items.Objects[cbSqlServerVersion.ItemIndex]);
+end;
+
+procedure TForm2.DBCConnectionADO2BeforeConnect(Sender: TObject);
+begin
   ADOConnection2.ConnectionString :=
-    AdoConnectString(cbAuthM.Checked, edtTargetServer.Text, edtTargetDatabaseName.Text,
+    AdoConnectString(cbAuthT.Checked, edtTargetServer.Text, edtTargetDatabaseName.Text,
     edtTargetUser.Text, edtTargetPassword.Text);
 
-  DBStructure1.Objs.MSSQLServerOptions.SQLServerVersion :=
+  DBStructure2.Objs.MSSQLServerOptions.SQLServerVersion :=
     TMSSQLServerVersionType(cbSqlServerVersion.Items.Objects[cbSqlServerVersion.ItemIndex]);
 end;
 
