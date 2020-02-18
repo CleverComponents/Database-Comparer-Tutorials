@@ -58,10 +58,7 @@ type
     procedure btnUpdateClick(Sender: TObject);
     procedure DBCConnectionADO2BeforeConnect(Sender: TObject);
   private
-    { Private declarations }
   public
-    procedure ExtractMasterDatabase();
-    procedure ExtractTargetDatabase();
   end;
 
 var
@@ -96,14 +93,6 @@ procedure TForm2.AddErrorMessage(Sender: TObject; ErrText: string);
 begin
   memLog.Lines.Add(ErrText);
   memLog.Perform(EM_SCROLLCARET, 0, 0);
-end;
-
-procedure TForm2.ExtractMasterDatabase;
-begin
-end;
-
-procedure TForm2.ExtractTargetDatabase;
-begin
 end;
 
 procedure TForm2.btnCompareClick(Sender: TObject);
