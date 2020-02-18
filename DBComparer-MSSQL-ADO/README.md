@@ -2,7 +2,7 @@
 
 <img align="left" src="ComparerMS.jpg"/>
 
-The Synchronize MSSQL DB structures via ADO project represents a code example for the [Synchronize MS SQL DB structures via ADO](https://www.clevercomponents.com/portal/kb/a148/synchronize-firebird-db-structures-via-firedac.aspx) tutorial.   
+The Synchronize MSSQL DB structures via ADO project represents a code example for the [Synchronize MS SQL DB structures via ADO](https://www.clevercomponents.com/portal/kb/a149/synchronize-ms-sql-db-structures-via-ado.aspx) tutorial.   
 
 This example shows how to synchronize a FireBird database structure via the FireDAC library.
 
