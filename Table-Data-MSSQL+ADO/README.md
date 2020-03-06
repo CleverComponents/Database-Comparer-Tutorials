@@ -1,8 +1,8 @@
-# Synchronize MS SQL database tables via ADO
+# Table Data Comparer MS SQL.
 
 <img align="left" src="TableDataComparer.jpg"/>
 
-The Synchronize MSSQL database tables via ADO project represents a code example for the [Synchronize MS SQL database tables via ADO](https://www.clevercomponents.com/portal/kb/a148/synchronize-firebird-db-structures-via-firedac.aspx) tutorial.   
+The Table Data Comparer MS SQL project represents a code example for the [Table Data Comparer MS SQL](https://www.clevercomponents.com/portal/kb/a148/synchronize-firebird-db-structures-via-firedac.aspx) tutorial.   
 
 This example shows how to synchronize a MSSQL database tables via  ADO.
 
