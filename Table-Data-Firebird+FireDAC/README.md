@@ -2,7 +2,7 @@
 
 <img align="left" src="TableDataComparerFB.jpg"/>
 
-The Table Data Comparer FireBird+FireDAC project represents a code example for the [Table Data Comparer FireBird+FireDAC](https://www.clevercomponents.com/portal/kb/a147/extract-db-structure-ms-sqlado.aspx) tutorial.   
+The Table Data Comparer FireBird+FireDAC project represents a code example for the [Table Data Comparer FireBird+FireDAC](https://www.clevercomponents.com/portal/kb/a153/table-data-comparer-firebird-via-firedac.aspx) tutorial.   
 
 This example shows how to synchronize a FireBird database tables via FireDAC.
 
